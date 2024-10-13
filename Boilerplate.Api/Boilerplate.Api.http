@@ -1,6 +1,29 @@
 @Api_HostAddress = http://localhost:5033
 
-GET {{Api_HostAddress}}/ping/
-Accept: application/json
+### Health Check
+GET {{Api_HostAddress}}/api/health/
 
-###
+### Get entity list
+GET {{Api_HostAddress}}/api/v1/entity/
+
+### Get entity by id
+GET {{Api_HostAddress}}/api/v1/entity/1
+
+### Create entity
+POST {{Api_HostAddress}}/api/v1/entity/
+Content-Type: application/json
+
+{
+  "field": "Field value",
+}
+
+### Update entity
+PUT {{Api_HostAddress}}/api/v1/entity/1
+Content-Type: application/json
+
+{
+  "field": "Field value updated",
+}
+
+### Delete entity
+DELETE {{Api_HostAddress}}/api/v1/entity/1
