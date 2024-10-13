@@ -4,7 +4,7 @@ public static class Routes
 {
 	public static void RegisterEntityRoutes(this WebApplication app)
 	{
-		RouteGroupBuilder group = app.MapGroup("/entity");
+		RouteGroupBuilder group = app.MapGroup("/entity").WithParameterValidation();
 
 		group.MapGet("/", List.Handler);
 		group.MapGet("/{id}", Get.Handler).WithName("GetEntity");
